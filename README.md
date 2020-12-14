@@ -11,3 +11,13 @@ What this means is that there might still be channels with higher viewcounts, th
 One way to solve this is to enable the "Auto Expand Followed Channels List" option in [BTTV](https://betterttv.com/).
 
 Also if the followed channels list is collapsed (only streamers' avatars are displayed) they cannot be sorted, since there's no viewcount to sort by.
+
+
+## Installation
+In order to use this, you need a userscript extension such as [Violentmonkey](https://violentmonkey.github.io/get-it/) (Greasemonkey and Tampermonkey will work as well).
+
+Then go to https://greasyfork.org/en/scripts/418625-sort-channels-by-viewcount and press "Install this script". A page should open where you can review the source code, and depending on the extension there should be a button such as "Confirm installation" or "Install".
+
+Refresh twitch and it should be working.
+
+You can disable it at any time by opening the Violentmonkey (or equivalent) extension popup, toggling the script and refreshing the page.
