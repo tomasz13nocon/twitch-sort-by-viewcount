@@ -2,7 +2,7 @@
 // @name         Sort channels by viewcount
 // @namespace    https://github.com/tomasz13nocon
 // @version      1.0
-// @description  Reorders the followed channels list in the sidebar based on viewcount. If there's more live channels than shown in the list, they will only be sorted after clicking "Show More". To partially remedy this, You can enable "Auto Expand Followed Channels List" option in BTTV.
+// @description  Reorders the followed channels list in the sidebar based on viewcount.
 // @author       Tomasz Nocoń
 // @match        https://www.twitch.tv/*
 // @grant        none
