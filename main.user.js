@@ -7,6 +7,7 @@
 // @match        https://www.twitch.tv/*
 // @grant        none
 // @homepageURL  https://github.com/tomasz13nocon/twitch-sort-by-viewcount
+// @license      MIT
 // ==/UserScript==
 
 (function() {
