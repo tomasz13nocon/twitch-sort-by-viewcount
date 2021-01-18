@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort channels by viewcount
 // @namespace    https://github.com/tomasz13nocon
-// @version      1.2
+// @version      1.3
 // @description  Reorders the followed channels list in the sidebar based on viewcount.
 // @author       Tomasz Nocoń
 // @match        https://www.twitch.tv/*
@@ -15,15 +15,7 @@
 
 	// Returns the react element from a dom node
 	function findReact(dom) {
-		const key = Object.keys(dom).find(key => key.startsWith("__reactInternalInstance$"));
-		const domFiber = dom[key];
-		if (domFiber == null) return null;
-
-		let parentFiber = domFiber.return;
-		while (typeof parentFiber.type == "string") {
-			parentFiber = parentFiber.return;
-		}
-		return parentFiber.stateNode;
+		return dom[Object.keys(dom).find(a=>a.startsWith("__reactInternalInstance$"))].return.stateNode;
 	}
 
 	// Returns viewcount of a given element, or undefined if offline.
@@ -39,7 +31,7 @@
 
 
 	let sidebar;
-	// Delay querying the element until it loads
+	// Delay the script until the element loads
 	while ((sidebar = document.getElementsByClassName("side-bar-contents")[0]) === undefined) {
 		await new Promise(r => setTimeout(r, 500));
 	}
@@ -64,15 +56,9 @@
 		if (!relevantMutation)
 			return;
 
-		// If the compact version of the followed channels list is being displayed, then there is no way to sort.
-		if (document.getElementsByClassName("side-nav--expanded").length === 0)
-			return;
-
-		let sections = sidebar.getElementsByClassName("side-nav-section");
-		let followedSection = sections[0];
-
+		let followedSection = sidebar.getElementsByClassName("side-nav-section")[0];
 		// Mapping to 2 parents up, as that's the outermost element for a single channel
-		let streams = [...followedSection.getElementsByClassName("side-nav-card")].map(el => el.parentNode.parentNode);
+		let streams = [...followedSection.querySelectorAll("div.side-nav-card")].map(el => el.parentNode.parentNode);
 
 		streams.sort((a, b) => {
 			let av = viewcount(a), bv = viewcount(b);

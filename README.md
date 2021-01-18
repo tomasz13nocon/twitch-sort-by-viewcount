@@ -10,8 +10,6 @@ What this means is that there might still be channels with higher viewcounts, th
 
 One way to solve this is to enable the "Auto Expand Followed Channels List" option in [BTTV](https://betterttv.com/).
 
-Also if the followed channels list is collapsed (only streamers' avatars are displayed) they cannot be sorted, since there's no viewcount to sort by.
-
 
 ## Installation
 In order to use this, you need a userscript extension such as [Violentmonkey](https://violentmonkey.github.io/get-it/) (Greasemonkey and Tampermonkey will work as well).
