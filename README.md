@@ -1,3 +1,5 @@
+***OBSOLETE***: Twitch has finally added the ability to change the sorting.
+
 # twitch-sort-by-viewcount
 [Recently twitch changed the way the followed channels list in the sidebar appears to some users.](https://twitter.com/TwitchSupport/status/1336452058279522306)
 
